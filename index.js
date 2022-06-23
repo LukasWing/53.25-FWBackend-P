@@ -3,7 +3,9 @@ import * as fs from "fs/promises";
 import { webshopRouter } from "./route.js";
 import cors from "cors";
 const app = express();
-const PORT = 3000;
+const PART = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
+
 // This is a built-in middleware function in Express. It parses incoming requests with JSON payloads.
 app.use(express.json());
 // Adding middleware that allow CORS
